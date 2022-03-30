@@ -11,7 +11,7 @@ import { unixToDay } from './components/Functions';
 //weather api call using axios
 const DEFAULT_CITY = 'lagos';
 
-const PATH_BASE = 'http://api.openweathermap.org/data/2.5/forecast';
+const PATH_BASE = 'https://api.openweathermap.org/data/2.5/forecast';
 const PATH_SEARCH = '/daily?';
 const PATH_CITY = 'q=';
 const PATH_COUNT = 'cnt=';
