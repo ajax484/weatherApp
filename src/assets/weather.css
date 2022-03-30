@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.weather {
+    background: url(./pexels-lumn-167699.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+}
+
+.weather-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 75px 0;
+    height: 70vh;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.temperature-list {
+    display: flex;
+    height: 30vh;
+    background-color: rgba(46, 54, 74, 0.8);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.day {
+    background-color: rgba(46, 54, 74, 0.8);
+    padding: 10px 15px;
+    height: auto;
+    border-radius: 16px;
+}
+
+.temp, .icon {
+    text-align: center;
+}
+
+.icon {
+    font-size: 50px;
+    margin: 0px 0px 10px;
+}
+
+/*style form with input and button*/
+.weather-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.weather-form input {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.weather-form input:focus {
+    outline: none;
+}
+
+.weather-form button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 18px;
+    background-color: #EC6E4C;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.weather-form button:hover {
+    background-color: #E56A54;
+}
