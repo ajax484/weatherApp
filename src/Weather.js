@@ -37,7 +37,7 @@ export default class Weather extends Component {
             weather: null,
             searchCity: DEFAULT_CITY,
             currentCity: null,
-            error: null,
+            error: false,
             isFetched: false
         }
 
@@ -107,7 +107,7 @@ export default class Weather extends Component {
     }
 
 
-    fetchWeather(searchCity, count = 7) {
+    fetchWeather(searchCity, count = 6) {
         const api = `${PATH_BASE}${PATH_SEARCH}${PATH_CITY}${searchCity}&${PATH_COUNT}${count}&${PATH_UNIT}&${PATH_APPID}${API_KEY}`;
 
         axios(api)
@@ -115,8 +115,8 @@ export default class Weather extends Component {
                 this.setSearchWeather(res.data, searchCity)
             })
             .catch(error => {
+                alert("no weather data found for this city");
                 this.setState({ error });
-                console.log(error);
             })
     }
 
@@ -135,7 +135,7 @@ export default class Weather extends Component {
     render() {
         const { currentCity, isFetched, searchCity } = this.state;
         const { city, country, timezone, temperatureList } = (isFetched && currentCity) || {};
-        // console.log(currentCity);
+
         return (
             <div className="weather" >
                 {isFetched ?

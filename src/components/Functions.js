@@ -14,10 +14,7 @@ export const dateToString = date => `${dateToDay(date)}, ${date.getDate()} ${dat
 export const unixToDay = unix => dateToDay(new Date(unix * 1000));
 
 //get time from time value
-export const getDateTimeFromTimezone = (value) => new Date(new Date().getTime() + (((new Date().getTimezoneOffset()*60) + parseInt(value))*1000));
+export const getDateTimeFromTimezone = (value) => new Date(new Date().getTime() + (((new Date().getTimezoneOffset() * 60) + parseInt(value)) * 1000));
 
 //convert country code to country name
-export const countryCodeToCountryName = (code) =>
-    new Intl.DisplayNames(
-        ['en'], { type: 'region' }
-    ).of(code);
+export const countryCodeToCountryName = (code) => new Intl.DisplayNames(['en'], { type: 'region' }).of(code);

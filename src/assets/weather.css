@@ -10,7 +10,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 100vh;
+    background-attachment: fixed;
 }
 
 .weather-top {
@@ -24,17 +24,23 @@
 
 .temperature-list {
     display: flex;
+    flex-wrap: wrap;
     height: 30vh;
     background-color: rgba(46, 54, 74, 0.8);
     color: white;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 0px 30px;
+}
+
+.temperature-list>* {
+    margin: 12px 0 0 12px;
 }
 
 .day {
     background-color: rgba(46, 54, 74, 0.8);
-    padding: 10px 15px;
+    padding: 0.625rem 0.9375rem;
+    text-align: center;
     height: auto;
     border-radius: 16px;
 }
@@ -53,13 +59,13 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    font-size: 11.125rem;
 }
 
 .weather-form input {
     border: none;
     border-radius: 10px;
     padding: 10px 25px;
-    font-size: 18px;
     margin-right: 10px;
 }
 
@@ -71,7 +77,6 @@
     border: none;
     border-radius: 10px;
     padding: 10px 25px;
-    font-size: 18px;
     background-color: #EC6E4C;
     color: white;
     outline: none;
@@ -80,4 +85,32 @@
 
 .weather-form button:hover {
     background-color: #E56A54;
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 12px;
+    }
+
+    .weather-top {
+        align-items: center;
+        flex-wrap: wrap;
+        align-items: space-between;
+        /* flex-direction: column; */
+        padding: 10px 20px;
+        height: 50vh;
+    }
+
+    .weather-form {
+        margin: auto;
+        order: 3;
+    }
+
+    .temperature-list {
+        justify-content: space-around;
+        height: fit-content;
+        width: 100vw;
+        gap: 20px;
+        padding: 20px 0px;
+    }
 }
